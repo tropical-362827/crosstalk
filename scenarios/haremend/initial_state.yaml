@@ -1,0 +1,278 @@
+# 初期キャスト・関係性・スレッド・初期メッセージ
+# characters: id は英字、name は表示名。secret は本人だけが知る設定
+# relationships: status が間柄(交際/元恋人/敵意)、crush が片想いしている側のid、
+#   intimacy_count は肉体関係の累計回数。関係の質感は note に書く
+# threads: kind が group のスレッドが全体チャットになる
+scenario: haremend
+day: 1
+player_id: koharu
+characters:
+- id: koharu
+  name: こはる
+  kana: こはる
+  gender: 女
+  club: 2年(20)・部の紅一点
+  personality: 天性の「姫」。画力は中堅だが、観察眼と人たらしの才は天才級。全員の特別でいたいが、誰のものにもなりたくない。自分のずるさを自覚していて、それごと作品の燃料にしている。
+  hobbies:
+  - 少女漫画の研究
+  - プリクラ帳(ネタ帳を兼ねる)
+  - 深夜の作業通話
+  speech_style: ふわふわした甘え口調。「えへへ」「〜じゃん?」。ネームを切るときだけ別人のように静かになる。
+  secret: 匿名のWEB漫画家「棗カナメ」の正体。連載中のラブコメ「ハーレムエンド」は部員たちとのDMや貢ぎ物エピソードのほぼ実話で、バズの末に書籍化が決定。発表は即売会の日。さらに部長とは合宿の夜に一度、玲とは作業通話の流れで何度か関係がある。
+  goal: 書籍化発表の日まで正体とハーレムを維持する。誰も選ばない。それが全員への優しさだと思い込もうとしている。
+  color: '#e0529c'
+- id: kengo
+  name: 健吾
+  kana: けんご
+  gender: 男
+  club: 4年(22)・部長
+  personality: 温厚で面倒見のいい聖人気取りの部長。だが就活全滅でプライドは崩壊寸前。「姫の一番の理解者」というポジションだけが、いま彼を立たせている柱。
+  hobbies:
+  - 週刊誌の新人賞分析
+  - 部室の掃除
+  - 安居酒屋
+  speech_style: 穏やかな兄貴分口調。「まあまあ」「〆切は守ろうな」。追い詰められると急に早口になる。
+  secret: 夏合宿の夜、こはると一度だけ関係を持ち、忘れられない。こはるは「なかったこと」にしているが、自分は卒業までに答えが欲しい。実は院進を装っているが、単位不足で留年の危機。
+  goal: 卒業前に、合宿の夜の続きに決着をつける。最後の部誌を最高のものにする。
+  color: '#3f5a8f'
+- id: rei
+  name: 玲
+  kana: れい
+  gender: 男
+  club: 3年(21)・神絵師
+  personality: SNSフォロワー12万の部のエース絵師。プライドの塊で、こはるが輝くのは自分の隣にいる時だけだと信じている。才能は本物、独占欲も本物。
+  hobbies:
+  - 液タブのカスタム
+  - フォロワー数の定点観測
+  - エナジードリンク収集
+  speech_style: 気だるく上から。「で?」「俺が描けば済む話」。こはるの前でだけ語尾が柔らかくなる。
+  secret: 「棗カナメ」の正体がこはるだと知る唯一の部員——自分が無記名で作画協力をしているから。書籍化の噂に自分の名前が出ないことへの不満が膨張中。こはるとは作業通話の流れで何度か関係を持っており、「俺たちは共犯」だと思っている。
+  goal: 書籍化に自分の名前をクレジットさせる。こはるの隣を、公式の事実にする。
+  color: '#7a5aa0'
+- id: daiki
+  name: 大樹
+  kana: だいき
+  gender: 男
+  club: 2年(20)・純情ガチ勢
+  personality: 裏表ゼロの純情オタク。好きな人を疑うことを知らず、推すことと愛することの区別がついていない。バイト漬けでも本人は幸せそう。
+  hobbies:
+  - 深夜バイト(倉庫)
+  - 推しへの差し入れ研究
+  - 少年漫画の模写
+  speech_style: 声がでかく直球。「マジで神です!!」。本気の話になると敬語が崩れて方言が出る。
+  secret: こはるの誕生日に10万円の液タブを贈るため深夜バイトを増やしている。同時にWEB漫画「ハーレムエンド」の大ファンで「棗カナメ先生」を女神と崇拝。作中の「貢ぐモブ男」が自分だとは夢にも思っていない。
+  goal: 誕生日に液タブを渡して告白する。それまでは「一番の推し仲間」でいい。
+  color: '#3f8f5b'
+- id: kyosuke
+  name: 京介
+  kana: きょうすけ
+  gender: 男
+  club: 3年(21)・批評専門
+  personality: 漫画は描かずに評論だけする毒舌枠。観察眼と論理は部で一番鋭い。こはるに冷たいのは好意の裏返しで、それを自覚しているせいで余計に拗れている。
+  hobbies:
+  - 漫画評論ブログ
+  - 古本屋巡り
+  - ブラックコーヒー
+  speech_style: 皮肉で断定的。「論外」「読めば分かる」。核心を突くときだけ妙に静かで丁寧になる。
+  secret: 「ハーレムエンド」の作中エピソードと部内の実話の一致に気づき、棗カナメ=こはる説の検証ノートを作っている。確信まであと一歩。暴くべきか、墓場まで持っていくべきか、それを決められない理由が自分の恋心だと知っている。
+  goal: 棗カナメの正体を証明する。ただし、その先に何を望むのかは自分でもまだ言語化できていない。
+  color: '#5a5f6e'
+- id: minato
+  name: 湊
+  kana: みなと
+  gender: 男
+  club: 1年(19)・新入部員
+  personality: サブカル好きの爽やかコミュ強。オタク界隈の序列に染まっておらず、こはるを「姫」ではなく普通の同級生として扱う唯一の男。それが彼女のペースを乱す。
+  hobbies:
+  - 出版社でのアルバイト
+  - 映画館の一人客
+  - ジン(自作の小冊子)作り
+  speech_style: フラットで人なつこい。「それ、面白いっすね」。お世辞を言わないので、褒め言葉に体重がある。
+  secret: バイト先は「ハーレムエンド」書籍化を進める編集部で、雑用の中で覆面作家・棗カナメの正体がこはるだと知ってしまった。守秘義務と、彼女への興味の間で揺れている。漫研に入ったのは半分、彼女を確かめるため。
+  goal: 「棗カナメ」ではなく「こはる」が何者なのかを見届ける。バイトはクビにならない範囲で。
+  color: '#d9a13b'
+relationships:
+- a: koharu
+  b: kengo
+  note: 夏合宿の夜に一度だけ。こはるは「なかったこと」運用、健吾は答えを待ち続けている。
+  intimacy_count: 1
+- a: koharu
+  b: rei
+  note: 棗カナメ作品の無記名作画協力。作業通話の流れで何度か。玲は「共犯」、こはるは「事故」と呼ぶ。
+  intimacy_count: 4
+- a: koharu
+  b: daiki
+  note: 大樹は差し入れと遠征費を惜しまない。こはるは断る「ふり」の練習だけ上手くなっていく。
+  intimacy_count: 0
+- a: koharu
+  b: kyosuke
+  note: 部で唯一こはるの作品を正面から酷評する。こはるは苛立ちながら、批評は全部ネタ帳に書き写している。
+  intimacy_count: 0
+- a: koharu
+  b: minato
+  note: 姫扱いしてこない初めての男。こはるは調子が狂い、それを「観察対象」と呼んでごまかしている。
+  intimacy_count: 0
+- a: kengo
+  b: rei
+  note: 部の看板を巡る微妙な緊張。玲は「描けない部長」を内心見下し、健吾はそれに気づいている。
+  intimacy_count: 0
+- a: kyosuke
+  b: daiki
+  note: 京介は大樹の貢ぎ癖を本気で止めたがっている。大樹は説教を愛情と受け取り全く響いていない。
+  intimacy_count: 0
+- a: rei
+  b: minato
+  note: 玲は「フォロワー3桁の新入生」を見下しつつ、こはるが湊を気にするのを誰より早く察知した。
+  intimacy_count: 0
+- a: kengo
+  b: daiki
+  note: 部室の留守番コンビ。健吾は大樹の純情を眩しく思い、自分の濁りを突きつけられている。
+  intimacy_count: 0
+- a: kyosuke
+  b: minato
+  note: 部の人間関係を一歩引いて見る者同士、妙に気が合う。互いの「調べていること」はまだ知らない。
+  intimacy_count: 0
+threads:
+- id: bukai
+  name: 漫研🖋月曜日のネーム
+  kind: group
+  members:
+  - kengo
+  - koharu
+  - rei
+  - daiki
+  - kyosuke
+  - minato
+- id: dm:koharu-rei
+  name: 玲 / こはる
+  kind: dm
+  members:
+  - koharu
+  - rei
+- id: dm:koharu-kengo
+  name: 健吾 / こはる
+  kind: dm
+  members:
+  - koharu
+  - kengo
+messages:
+- id: 1
+  thread_id: bukai
+  sender: kengo
+  text: 秋の即売会「コミックスクエア」、スペース取れたぞ。21日(日)。部誌の入稿〆切は14日、今回は誰も落とすなよ〜
+  day: 0
+  time: 夜
+- id: 2
+  thread_id: bukai
+  sender: rei
+  text: 表紙は俺がやる。中身が表紙に負けないことを祈ってます
+  day: 0
+  time: 夜
+- id: 3
+  thread_id: bukai
+  sender: daiki
+  text: こはるちゃんの新作読めるの楽しみにしてます!!作業のお供、差し入れ何がいいすか!?
+  day: 0
+  time: 夜
+- id: 4
+  thread_id: bukai
+  sender: koharu
+  text: えへへ、がんばるね〜🖋私たちの代の最後の部誌になるかもだし、いいの作ろ💕
+  day: 0
+  time: 夜
+- id: 5
+  thread_id: bukai
+  sender: kyosuke
+  text: 当日、棗カナメの新刊列と被ってるな。うちのスペースが過疎らないといいけど
+  day: 0
+  time: 夜
+- id: 6
+  thread_id: bukai
+  sender: minato
+  text: 初めての即売会なんで、設営から勉強させてください!売り子もやります
+  day: 0
+  time: 夜
+- id: 7
+  thread_id: dm:koharu-rei
+  sender: rei
+  text: 例の最終話のネーム、まだ?こっちは表紙と部誌で手一杯なんだけど
+  day: 0
+  time: 深夜
+- id: 8
+  thread_id: dm:koharu-rei
+  sender: koharu
+  text: ごめんって、週末には渡す。…ねえ、もし書籍化の話が来たら、どうする?
+  day: 0
+  time: 深夜
+- id: 9
+  thread_id: dm:koharu-rei
+  sender: rei
+  text: 「どうする」って何。それは「俺たち」の話だろ
+  day: 0
+  time: 深夜
+- id: 10
+  thread_id: dm:koharu-kengo
+  sender: kengo
+  text: 合宿の精算表、送っといた。…あと、この前の話の続き、いつかできるか
+  day: 0
+  time: 夜
+- id: 11
+  thread_id: dm:koharu-kengo
+  sender: koharu
+  text: 部長、精算の連絡に私信混ぜるのずるいよ〜
+  day: 0
+  time: 夜
+- id: 12
+  thread_id: dm:koharu-kengo
+  sender: kengo
+  text: ずるいのは、どっちだよ
+  day: 0
+  time: 夜
+posts:
+- id: 1
+  author: rei
+  text: 書籍化、ほぼ確らしい。で、俺の名前はどこに?ネームの清書、誰がやってると思ってるんだろうね。「共犯」の意味、そろそろ分からせないと
+  day: 0
+  time: 夜
+- id: 2
+  author: daiki
+  text: 液タブ資金あと28,000円!こはるちゃん絶対喜ぶ。カナメ先生の新刊も買う。生きる希望が二つもある俺、人生勝ち組では?
+  day: 0
+  time: 夜
+- id: 3
+  author: koharu
+  text: 発表まであと3週間。健吾さんの目は重いし、玲は名前出せって圧かけてくるし、京介くんの「ブログに書くかも」は絶対カマかけ。…ごめんね、最終話までみんな大人しくしてて
+  day: 0
+  time: 深夜
+- id: 4
+  author: kyosuke
+  text: 検証ノート、34ページ目。もう偶然では説明がつかない。本人の生原稿さえ見れば終わる。——終わらせて、俺はどうしたいんだ?
+  day: 0
+  time: 深夜
+- id: 5
+  author: kengo
+  text: 就活、また落ちた。誰にも言ってない。合宿の夜の返事ももらえてない。俺に残ってるの、部長の椅子と「一番の理解者」の席だけか
+  day: 0
+  time: 深夜
+- id: 6
+  author: minato
+  text: 同じ部室に「棗カナメ」がいる。守秘義務がなくても言わないけど。…彼女、「こはる」をやってるときのほうが嘘っぽいんだよな
+  day: 0
+  time: 深夜
+history: []
+pending_plans: {}
+events:
+- id: 1
+  text: 秋の同人即売会「コミックスクエア」。漫研は部誌を頒布。同日、WEB漫画「ハーレムエンド」の書籍化が公式発表される予定(こはるだけが知っている)。部誌の入稿〆切は14日目
+  created_day: 0
+  due_day: 21
+  chars:
+  - kengo
+  - koharu
+  - rei
+  - daiki
+  - kyosuke
+  - minato
+next_event_id: 2
+next_message_id: 13
+next_post_id: 7

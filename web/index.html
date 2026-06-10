@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>crosstalk — テニスサークル ラブオール</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">crosstalk <span class="sub">青陵大学テニスサークル「ラブオール」</span></div>
+  <div class="day-info"><span id="day-label">1日目(月)</span></div>
+  <div class="player-info">操作中: <span id="player-name">—</span></div>
+  <button id="export-btn" class="ghost" title="セーブデータをJSONでダウンロード">💾 書き出し</button>
+  <button id="import-btn" class="ghost" title="セーブデータのJSONを読み込んで上書き">📥 読み込み</button>
+  <input id="import-file" type="file" accept=".json,application/json" class="hidden">
+  <button id="new-game-btn" class="ghost">新しいゲーム</button>
+</header>
+
+<nav id="tabs">
+  <button class="tab active" data-tab="class">メンバー</button>
+  <button class="tab" data-tab="plan">行動計画</button>
+  <button class="tab" data-tab="log">できごと</button>
+  <button class="tab" data-tab="chat">メッセージ <span id="chat-badge" class="badge hidden">0</span></button>
+  <button class="tab" data-tab="sns">鍵垢 <span id="sns-badge" class="badge hidden">0</span></button>
+  <button class="tab" data-tab="finale">終幕</button>
+  <button class="tab" data-tab="debug" title="LLMに送った生のプロンプトと応答">🐛</button>
+</nav>
+
+<main>
+  <!-- クラス -->
+  <section id="view-class" class="view active">
+    <div id="char-grid"></div>
+    <div id="char-detail" class="hidden"></div>
+  </section>
+
+  <!-- 行動計画 -->
+  <section id="view-plan" class="view">
+    <div class="plan-box">
+      <h2 id="plan-title">今日の行動計画</h2>
+      <p class="hint">自分で書いても、AIに考えてもらってから編集してもOK。</p>
+      <textarea id="plan-text" rows="5" placeholder="例: 練習のあと、さりげなく蓮のスマホを確認するチャンスを窺う。夜はひかるを飲みに誘って探りを入れる。"></textarea>
+      <details id="god-box">
+        <summary>✋ 神の采配(チート)</summary>
+        <p class="hint">ここに書いたことは、今日<b>必ず起こります</b>。キャラの意志を超えた絶対命令です(例: 「紗英が蓮と美桜の密会現場に鉢合わせる」「千尋の検査結果が陽性だと判明する」)。空欄なら通常進行。</p>
+        <textarea id="god-text" rows="3" placeholder="今日、必ず起こること…"></textarea>
+      </details>
+      <div class="plan-actions">
+        <button id="suggest-btn" class="ghost">AIに考えてもらう</button>
+        <button id="advance-btn" class="primary">この計画で一日を進める ▶</button>
+      </div>
+      <div id="advance-status" class="hidden">
+        <div class="progress-row">
+          <div class="spinner"></div>
+          <span id="advance-stage">準備中…</span>
+          <span id="advance-percent"></span>
+        </div>
+        <div class="progress-track"><div id="advance-bar"></div></div>
+      </div>
+    </div>
+    <div id="events-box" class="hidden"></div>
+    <div id="last-result" class="hidden"></div>
+  </section>
+
+  <!-- できごと -->
+  <section id="view-log" class="view">
+    <div id="day-log"></div>
+  </section>
+
+  <!-- 終幕 -->
+  <section id="view-finale" class="view">
+    <div class="plan-box" id="finale-gen-box">
+      <h2>プレイ終了 — シーズン総括</h2>
+      <p class="hint">全員に全記録(裏のDM・秘密・肉体関係の回数)を開示した上で、総括と本人コメントを生成します。同窓会・全暴露スペシャルです。</p>
+      <button id="finale-btn" class="primary">総括を生成する</button>
+      <div id="finale-status" class="hidden">
+        <div class="progress-row">
+          <div class="spinner"></div>
+          <span id="finale-stage">準備中…</span>
+          <span id="finale-percent"></span>
+        </div>
+        <div class="progress-track"><div id="finale-bar"></div></div>
+      </div>
+    </div>
+    <div id="finale-content"></div>
+  </section>
+
+  <!-- SNS(全員が鍵垢。プロフィールページで覗き見る) -->
+  <section id="view-sns" class="view">
+    <div id="sns-wrap">
+      <div id="sns-profiles"></div>
+      <div id="sns-profile-head"></div>
+      <div id="sns-composer" class="hidden">
+        <div id="sns-composer-avatar" class="msg-avatar">?</div>
+        <div class="sns-composer-main">
+          <textarea id="sns-input" rows="2" maxlength="280" placeholder="いまどうしてる?(鍵垢。誰にも見られません)"></textarea>
+          <div class="sns-composer-row">
+            <span class="sns-hint">🔒 ここは自分だけの鍵垢 — 愚痴も本音もそのままどうぞ</span>
+            <span id="sns-count" class="sns-hint">0/280</span>
+            <button id="sns-send" class="primary">投稿する</button>
+          </div>
+        </div>
+      </div>
+      <div id="sns-timeline"></div>
+    </div>
+  </section>
+
+  <!-- デバッグ(生のLLMログ) -->
+  <section id="view-debug" class="view">
+    <div id="debug-wrap">
+      <div class="debug-head">
+        <h2>🐛 LLMデバッグログ</h2>
+        <span class="hint">LLMに送った生のプロンプトと応答(直近・新しい順)。<code>logs/llm-日付.jsonl</code> にも残っています。</span>
+        <button id="debug-refresh" class="ghost">🔄 更新</button>
+      </div>
+      <div id="debug-list"></div>
+    </div>
+  </section>
+
+  <!-- メッセージ -->
+  <section id="view-chat" class="view">
+    <div id="messenger">
+      <aside id="thread-list"></aside>
+      <div id="chat-pane">
+        <div id="chat-header">スレッドを選択してください</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-row" class="hidden">
+          <input id="chat-input" type="text" placeholder="メッセージを入力…">
+          <button id="chat-send" class="primary">送信</button>
+        </div>
+        <div id="chat-readonly" class="hidden">👁 このトークは覗き見しています(参加していないため送信不可)</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="newgame-modal" class="hidden">
+  <div class="modal-box">
+    <h2>新しいゲーム</h2>
+    <p class="hint">シナリオを選んでください。現在のプレイ状況とセーブデータは消えます(巻き戻し履歴も含む)。</p>
+    <div id="scenario-list"></div>
+    <div class="modal-actions">
+      <button id="newgame-cancel" class="ghost">キャンセル</button>
+      <button id="newgame-start" class="primary">このシナリオではじめる</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="hidden"></div>
+<script src="app.js"></script>
+</body>
+</html>
