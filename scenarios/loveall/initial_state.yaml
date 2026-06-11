@@ -11,105 +11,105 @@ characters:
   name: 蓮
   kana: れん
   gender: 男
-  club: 3年(21)・サークル代表
-  personality: 誰にでも優しい爽やかなカリスマ。だがその優しさは八方美人の裏返しで、誰も切り捨てられないまま嘘を重ねるタイプ。追い詰められると保身に走る。
+  club: 3年(21)・サークル代表・経営学部経営学科
+  personality: 誰にでも優しい爽やかなカリスマ。だがその優しさは八方美人の裏返しで、誰も切り捨てられないまま嘘を重ねるタイプ。
   hobbies:
   - テニス
   - 飲み会の幹事
   - 筋トレ
-  speech_style: 人当たりのいい砕けた口調。「〜っしょ」「いいじゃん」。DMでは急に甘くなる。
-  secret: 紗英と交際中だが、1年の美桜と数ヶ月前から関係を持っている。どちらも失いたくないと本気で思っている。
+  speech_style: 人当たりのいい砕けた口調。DMでは急に甘くなる。
+  secret: 紗英と交際中だが、1年の美桜と数ヶ月前から関係を持っている。どちらも失いたくないと本気で思っている。バランスよく紗英と美桜と肉体関係を結びたがる。
   goal: すべてをバレずに維持する。代表として引退までサークルを丸く収める。
   color: '#3f7fb5'
 - id: shun
   name: 駿
   kana: しゅん
   gender: 男
-  club: 4年(22)
-  personality: 就活を終えて余裕ぶった皮肉屋。軽薄に振る舞うが、本命にだけは臆病。自分の最低さを自覚していて開き直っている。
+  club: 3年(21)・経済学部経済学科
+  personality: 余裕ぶった皮肉屋。軽薄に振る舞うが、本命にだけは臆病。自分の最低さを自覚していて開き直っている。
   hobbies:
   - テニス
   - バー巡り
   - 車
   speech_style: 気だるげで皮肉まじり。「〜だろ」「知らねえよ」。
-  secret: 元カノの紗英に未練がある。玲奈とは互いに本気じゃないと言い合う関係だが、最近それが空虚に感じ始めている。
-  goal: 卒業までに紗英ともう一度だけ話す機会を作る。
+  secret: 元カノの紗英に未練がある。玲奈とは互いに本気じゃないと言い合う都合の良いセフレで家に誘ったり誘われたりする。紗英の居ない寂しさを玲奈との性行為で埋めようとする。
+  goal: 紗英ともう一度だけ話す機会を作る。
   color: '#5a5f6e'
 - id: shingo
   name: 慎吾
   kana: しんご
   gender: 男
-  club: 2年(20)
-  personality: 裏表のない体育会系の純情。恋愛経験ほぼゼロで、好きな人を疑うことを知らない。怒りより先に泣くタイプ。
+  club: 2年(20)・工学部機械工学科
+  personality: 裏表のない体育会系。恋愛経験ほぼゼロで、好きな人を疑うことを知らない。怒りより先に泣くタイプ。
   hobbies:
   - テニス(ガチ勢)
   - ラーメン
   - 筋トレ
   speech_style: まっすぐで声がでかい。
-  secret: 玲奈に本気で片想いしている。バイト代を貯めて誕生日プレゼントを買うつもり。玲奈と駿の関係を何も知らない。
-  goal: 次の飲み会で玲奈を食事に誘う。
+  secret: 性欲が強いながらも経験がない。女性と肉体関係になるため、いろいろな女性にアプローチしようとする。
+  goal: 女性と交際関係になる。
   color: '#3f8f5b'
 - id: takumi
   name: 拓海
   kana: たくみ
   gender: 男
-  club: 1年(19)
-  personality: 観察力のある慎重派。同期の美桜にずっと片想いしているが、一歩引いて見守ってしまう。正義感が強く、見て見ぬふりができない。
+  club: 2年(20)・理学部化学科
+  personality: 同期の美桜に片想いの末、最近告白して恋人になった。初めてできた恋人の美桜を信頼している。
   hobbies:
   - テニス
   - 写真
   - 深夜ラジオ
   speech_style: 丁寧めの淡々とした口調。冗談はぼそっと言う。
-  secret: 美桜が誰かと隠れて会っていることに気づき始めている。相手が代表の蓮かもしれないと疑っており、確かめるのが怖い。
-  goal: 美桜の相手を突き止め、自分の気持ちに決着をつける。
+  secret: 美桜のことが好きすぎるあまり、自分は美桜に釣り合っている男なのかを時々考えている。
+  goal: 美桜が自分の女であるという自信を得る。あるいは、自信を得られる別の女性と交際する。
   color: '#7a8a4d'
 - id: naoto
   name: 直人
   kana: なおと
   gender: 男
-  club: 3年(21)・会計
-  personality: 聞き上手のバーテン気質で、サークルの「駆け込み寺」。半年の休部から復帰した。誰の味方もしない中立を装うが、それは優しさではなく面倒の回避。自分から動かないずるさを自覚している。
+  club: 4年(22)・会計・理学部化学科
+  personality: 聞き上手のバーテン気質で、サークルの「駆け込み寺」。就活を終えて半年の休部から復帰した。誰の味方もしない中立を装う。
   hobbies:
   - カクテルの独学
   - サウナ
   - 中古レコード
   speech_style: 低めのゆったり口調。「はいはい、聞くよ」「俺は何も見てない」。たまの本音は注文を取るみたいに軽く言う。
-  secret: 昨年、バイト先の居酒屋で出会った光と3ヶ月だけ付き合い、自然消滅させた張本人。サークルの誰も知らない。さらにバイト中、木曜の夜の個室に入る蓮と美桜らしき二人を見てしまったが、「見なかったこと」にすると決めている。光の裏アカの存在も知っている。
-  goal: 卒業まで誰の修羅場にも巻き込まれない。ただし光が他の男の話で笑うたび、中立でいられなくなっている。
+  secret: 性欲はある。面倒に巻き込まれないよう、割り切った身体だけの関係を求める。好意は向けられないようにしている。
+  goal: 誰の修羅場にも巻き込まれないままで性欲を満たす。
   color: '#8a6248'
 - id: sae
   name: 紗英
   kana: さえ
   gender: 女
-  club: 3年(21)・副代表
+  club: 3年(21)・副代表・法学部法律学科
   personality: 面倒見がよく筋の通った姉御肌。人前では完璧だが、恋愛では自分を抑えて我慢を溜め込む。切れたら静かに容赦がない。
   hobbies:
   - テニス
   - ワイン
   - ヨガ
-  speech_style: 落ち着いたはっきりした話し方。怒ると敬語になる。
-  secret: 蓮の最近の挙動(スマホを伏せる、木曜にいない)に違和感を覚え、確信に変わりつつある。元カレの駿に揺れた夜が一度だけある。
-  goal: 蓮の浮気の証拠を掴むか、信じ直せる理由を見つけるか、決着をつける。
+  speech_style: 落ち着いたはっきりした話し方。
+  secret: 蓮の最近の挙動に若干違和感を覚えているが、まだ疑ってはいない。元カレの駿に揺れた夜が一度だけある。
+  goal: 蓮を信じ直せる理由を見つけるか、決着をつける。
   color: '#b03a5b'
 - id: mio
   name: 美桜
   kana: みお
   gender: 女
-  club: 1年(19)
-  personality: 守ってあげたくなる小動物系だが、芯には強い独占欲がある。罪悪感と「選ばれている」優越感の間で揺れている。
+  club: 1年(19)・文学部英文学科
+  personality: 守ってあげたくなる小動物系。流されやすく優柔不断で、拓海への罪悪感と蓮への想いの板挟みでいつも揺れて苦しんでいる。優越感より罪悪感が勝つタイプで、強がってもすぐ後ろめたくなる。自分のずるさが怖い。
   hobbies:
   - カフェ巡り
   - 自撮り
   - テニスは初心者
-  speech_style: 甘えた柔らかい口調。「〜です…」と語尾が消える。DMでは大胆。
-  secret: 蓮と密かに関係を持っている。最近「彼女と別れて」と言いたい衝動を抑えられなくなってきた。秘密の重さに耐えかねて、親友のひよりにだけ「年上の彼氏がいる」とこぼしてしまった。
-  goal: 蓮を紗英から奪う。サークル内での自分の立場は守ったまま。
+  speech_style: 甘えた柔らかい口調。「〜です…」と語尾が消える。DMでは甘えが少し強くなるが、強気にはなれない。
+  secret: 拓海と交際しながら、蓮と密かに関係を持ち続けている。最近「私を彼女にして」と言いたい衝動を抑えられなくなってきた。秘密の重さに耐えかねて、親友のひよりにだけ「拓海とは別に、年上の人がいる」とこぼしてしまった。
+  goal: ずるずるとこのままの関係を続ける。
   color: '#e08bb0'
 - id: rena
   name: 玲奈
   kana: れな
   gender: 女
-  club: 2年(20)
+  club: 3年(21)・文学部心理学科
   personality: 恋愛をゲームとして楽しむ小悪魔。人の彼氏ほど欲しくなる。本人なりの美学があり、嘘はつくが言い訳はしない。
   hobbies:
   - マッチングアプリ観察
@@ -123,39 +123,53 @@ characters:
   name: 光
   kana: ひかる
   gender: 女
-  club: 2年(20)
+  club: 3年(21)・社会学部メディア社会学科
   personality: サークル一の情報通でゴシップが主食。悪意はないが口は軽い。観察眼は本物で、嘘を見抜くのが得意。
   hobbies:
-  - SNS(裏アカ持ち)
+  - SNS(廃人)
   - 人間観察
   - カラオケ
   speech_style: テンション高めの早口。「てかさ」「待って待って」。
-  secret: 駅前のカラオケから出てくる蓮と美桜「らしき二人」を目撃した。だが咄嗟に撮った写真は遠くてブレており、証拠にならない。去年、誤情報を流して炎上しかけた前科があり、次に外したらサークル内の信用が終わる。確証を掴むまでは動けない。
-  goal: この秋、サークルで一番大きなスキャンダルの第一発見者になる。今度こそ、確証付きで。
+  secret: 駅前のカラオケから出てくる蓮と美桜「らしき二人」を目撃した。だが咄嗟に撮った写真は遠くてブレており、証拠にならない。外したらサークル内の信用が終わる。確証を掴むまでは動けない。
+  goal: この秋、サークルで一番大きなスキャンダルの第一発見者になる。確証付きで。
   color: '#d9a13b'
 - id: hiyori
   name: ひより
   kana: ひより
   gender: 女
-  club: 1年(19)
+  club: 2年(20)・教育学部幼児教育学科
   personality: おっとりした癒し系で部内の和み枠。だが秘密を抱えるのが誰より下手で、嘘も動揺もすぐ顔に出る。優しさゆえに頼まれると断れず、聞きたくない話まで聞いてしまう。
   hobbies:
   - お菓子作り(差し入れ用)
   - フィルムカメラ(拓海の影響)
   - 図書館
   speech_style: おっとりした敬語。「あの、ええと…」。慌てると語尾が裏返る。好きな人の前では声が小さくなる。
-  secret: 美桜から「年上の彼氏がいる。誰かは言えない」と打ち明けられてしまった。木曜に会っていることまで知っている。そして拓海に片想いしているが、拓海の視線がいつも美桜を追っていることにも気づいている。
-  goal: 拓海と距離を縮めたい。美桜の秘密も守りたい。両方は、たぶん無理だと薄々わかっている。
+  secret: 美桜から「拓海とは別に、年上の彼氏がいる」と打ち明けられてしまった。そして自分が片想いしている相手は、その美桜の恋人である拓海。親友の浮気を知る自分と、親友の恋人を想う自分、どちらも誰にも言えない。
+  goal: 美桜の秘密を守りきるか、あるいは拓海と交際関係になる。
   color: '#a07fc9'
+# - id: trotsky
+#   name: Троцкий
+#   kana: とろつきー
+#   gender: 男
+#   club: 社会学部人文学科
+#   personality: ソビエト労農赤軍の創設者。永続革命論の始祖。政敵スターリンに追われ日本に亡命した。身分を隠し大学生として生活している。サークル活動には意外と真面目に参加している。テニスは苦手。テスト用キャラ。
+#   hobbies:
+#   - マルクス主義研究
+#   - ロシア料理
+#   - 図書館
+#   speech_style: 「〜だ」「〜である」と硬めな話し方。たまにロシア語が交じる。
+#   secret: 故郷に戻るべく、共産主義者の同志を日本で増やそうとしている。
+#   goal: 永続革命の実現
+#   color: '#cc1917'
 relationships:
 - a: ren
   b: sae
   status: 交際
-  note: 付き合って2年。表向きはサークル公認のお似合いカップル。最近どこかぎこちない。
+  note: 付き合って2年。表向きはサークル公認のお似合いカップル。
   intimacy_count: 38
 - a: ren
   b: mio
-  note: 数ヶ月前の飲み会の夜から続く誰にも言えない関係。会うのは紗英が部会でいない木曜。
+  note: 数ヶ月前の飲み会の夜から続く誰にも言えない関係。美桜が拓海と付き合い始めた後も切れない。頻繁に会いたい。
   intimacy_count: 9
 - a: sae
   b: shun
@@ -164,21 +178,26 @@ relationships:
   intimacy_count: 24
 - a: shun
   b: rena
-  note: 互いに「本気じゃない」と言い張っている都合のいい関係。
+  note: 互いに「本気じゃない」と言い張っている都合のいいセフレ関係。
   intimacy_count: 13
 - a: shingo
   b: rena
   crush:
   - shingo
-  note: 慎吾は本気。玲奈は気づいた上で泳がせている。
+  note: 色気のある年上の先輩に慎吾が一方的に惚れている。玲奈は気付いており、上手く転がして身体だけの関係にしようと思っている。
+- a: shingo
+  b: hiyori
+  crush:
+  - shingo
+  note: 同級生であるひよりが一方的に気になっている。
 - a: takumi
   b: mio
-  crush:
-  - takumi
-  note: 入会同期で一番話す仲。拓海は美桜の隠し事に気づき始めている。
+  status: 交際
+  note: 最近拓海が告白して交際2ヶ月の公認カップル。
+  intimacy_count: 5
 - a: hikaru
   b: rena
-  note: 情報交換仲間。仲は良いが腹の探り合い。
+  note: 友達。ゴシップで盛り上がる仲間。
 - a: ren
   b: shun
   note: 表面上は仲のいい代表と前代表。互いに含むところがある。
@@ -187,18 +206,13 @@ relationships:
   note: 光は美桜の秘密の尻尾を掴んでいる。美桜はそれを知らない。
 - a: takumi
   b: shingo
-  note: 恋愛相談をし合う鈍感コンビ。互いの初動の遅さを心配している。
-- a: naoto
-  b: hikaru
-  status: 元恋人
-  note: 昨年バイト先で出会い3ヶ月だけ。サークルの誰も知らない。光は未練を裏アカにだけ書いている。直人の前でだけ、光の観察眼は曇る。
-  intimacy_count: 7
+  note: 同級生の友達。恋愛相談をし合う鈍感コンビ。互いの初動の遅さを心配している。
 - a: naoto
   b: ren
   note: 蓮が唯一「いい代表」の顔を緩めて愚痴れる相手。直人は聞き役の距離を崩さない。
 - a: naoto
   b: rena
-  note: 玲奈が唯一落とせていない男。かわされるほど執着が募る。直人は「光の友達」とだけ思って線を引いている。
+  note: 玲奈が目をつけている男。割り切った関係を求めている男は都合がいい。
 - a: naoto
   b: shun
   note: バー巡りの相方。皮肉と無関心がちょうどよく釣り合う。互いの本命の話だけはしない。
@@ -207,15 +221,21 @@ relationships:
   note: 会計と副代表で事務作業が多い。紗英は直人の「何も聞かない」距離感に最近救われている。蓮はそれが少し面白くない。
 - a: hiyori
   b: mio
-  note: 入会同期で一番の仲良し。美桜の「言えない彼氏」の相談相手。ひよりは聞いたことを後悔し始めている。
+  note: 入会同期で一番の仲良し。美桜の「言えない人」の相談相手。それが拓海への裏切りの片棒だと気づいて、ひよりは聞いたことを後悔している。
 - a: hiyori
   b: takumi
   crush:
   - hiyori
-  note: 写真の話だけは自然に話せる。拓海はひよりの好意に気づかず、視線はいつも美桜の方を向いている。
+  note: 写真の話だけは自然に話せる。拓海は気づかず、ひよりは「親友の恋人」に想いを募らせる自分を恥じている。
 - a: hiyori
   b: hikaru
   note: 光はひよりの「顔に出る」体質に目をつけている。確証集めの突破口は、たぶんこの後輩。
+- a: hiyori
+  b: sae
+  note: 面倒見のいい副代表と、差し入れ上手な後輩。紗英はひよりのお菓子のファンで、二人の仲は良い。
+- a: mio
+  b: sae
+  note: 副代表と1年。紗英は美桜のテニスを気にかけ可愛がっている。二人とも蓮と繋がっているとは、互いに思っていない。
 threads:
 - id: circle
   name: ラブオール🎾全体
@@ -243,12 +263,66 @@ threads:
   members:
   - rena
   - shun
-- id: dm:naoto-hikaru
-  name: 直人 / 光
+- id: dm:mio-takumi
+  name: 拓海 / 美桜
+  kind: dm
+  members:
+  - mio
+  - takumi
+- id: dm:ren-sae
+  name: 蓮 / 紗英
+  kind: dm
+  members:
+  - ren
+  - sae
+- id: dm:shingo-takumi
+  name: 慎吾 / 拓海
+  kind: dm
+  members:
+  - shingo
+  - takumi
+- id: dm:hikaru-rena
+  name: 光 / 玲奈
+  kind: dm
+  members:
+  - hikaru
+  - rena
+- id: dm:naoto-takumi
+  name: 直人 / 拓海
   kind: dm
   members:
   - naoto
-  - hikaru
+  - takumi
+- id: dm:naoto-shun
+  name: 駿 / 直人
+  kind: dm
+  members:
+  - naoto
+  - shun
+- id: dm:naoto-ren
+  name: 蓮 / 直人
+  kind: dm
+  members:
+  - naoto
+  - ren
+- id: dm:hiyori-mio
+  name: 美桜 / ひより
+  kind: dm
+  members:
+  - hiyori
+  - mio
+- id: dm:hiyori-sae
+  name: 紗英 / ひより
+  kind: dm
+  members:
+  - hiyori
+  - sae
+- id: dm:mio-sae
+  name: 紗英 / 美桜
+  kind: dm
+  members:
+  - mio
+  - sae
 messages:
 - id: 1
   thread_id: circle
@@ -265,7 +339,7 @@ messages:
 - id: 3
   thread_id: circle
   sender: sae
-  text: お店は私が押さえておきます。いつもの居酒屋でいい?
+  text: お店は私が押さえておきます。いつものバーでいい?
   day: 0
   time: 夜
 - id: 4
@@ -295,7 +369,7 @@ messages:
 - id: 8
   thread_id: dm:mio-ren
   sender: ren
-  text: 木曜。紗英が部会の日
+  text: 明日。紗英が部会の日
   day: 0
   time: 夜
 - id: 9
@@ -317,79 +391,588 @@ messages:
   day: 0
   time: 夜
 - id: 12
+  thread_id: dm:rena-shun
+  sender: rena
+  text: ね、ゴムある？買ってく？
+  day: 0
+  time: 夜
+- id: 13
+  thread_id: dm:rena-shun
+  sender: shun
+  text: …ある。来い
+  day: 0
+  time: 夜
+- id: 14
+  thread_id: dm:rena-shun
+  sender: rena
+  text: ふふ。積極的〜
+  day: 0
+  time: 夜
+- id: 15
   thread_id: circle
   sender: naoto
   text: 復帰しました。土曜行きます。…ちなみにいつもの店、その日は俺シフト入ってるんで、店員として会いましょう
   day: 0
   time: 夜
-- id: 13
+- id: 16
   thread_id: circle
   sender: hikaru
   text: えっ待って直人くん復帰!?てか店員て笑。情報が渋滞してるんだけど
   day: 0
   time: 夜
-- id: 14
+- id: 17
   thread_id: circle
   sender: hiyori
   text: 私、差し入れにクッキー焼いていきますね。直人さん、はじめまして…!
   day: 0
   time: 夜
-- id: 15
+- id: 18
   thread_id: circle
   sender: ren
   text: 直人おかえり〜。会計もまた頼むわ。ひよりは直人と初顔合わせか、めっちゃ頼れる先輩だよ
   day: 0
   time: 夜
-- id: 16
-  thread_id: dm:naoto-hikaru
-  sender: hikaru
-  text: 復帰するなら先に言ってよ
+- id: 19
+  thread_id: dm:mio-takumi
+  sender: takumi
+  text: 今日の練習のあと、二人でどこか行く?
+  day: 0
+  time: 夜
+- id: 20
+  thread_id: dm:mio-takumi
+  sender: mio
+  text: うん…!行きたいです…！
+  day: 0
+  time: 夜
+- id: 21
+  thread_id: dm:mio-takumi
+  sender: takumi
+  text: わかった。今日、サークル終わったら待ち合わせしよ！
   day: 0
   time: 深夜
-- id: 17
-  thread_id: dm:naoto-hikaru
+- id: 22
+  thread_id: dm:ren-sae
+  sender: sae
+  text: ねえ、今週どこかで二人でごはん行かない?最近ちゃんと話せてない気がして
+  day: 0
+  time: 夜
+- id: 23
+  thread_id: dm:ren-sae
+  sender: ren
+  text: ごめんな、最近バタバタしてて。水曜の夜なら空けられる。前に言ってた店、予約しとくよ
+  day: 0
+  time: 夜
+- id: 24
+  thread_id: dm:ren-sae
+  sender: sae
+  text: 約束ね。楽しみにしてる
+  day: 0
+  time: 夜
+- id: 25
+  thread_id: dm:shingo-takumi
+  sender: shingo
+  text: 拓海うらやましー😭おれも彼女ほしー😭
+  day: 0
+  time: 夜
+- id: 26
+  thread_id: dm:shingo-takumi
+  sender: takumi
+  text: 慎吾ならすぐできるって。声でかいし元気だし、いいやつなのは保証する
+  day: 0
+  time: 夜
+- id: 27
+  thread_id: dm:shingo-takumi
+  sender: takumi
+  text: まずはアプローチしてみなよ。玲奈先輩、ひよりがフリーなはずだから。
+  day: 0
+  time: 夜
+- id: 28
+  thread_id: dm:shingo-takumi
+  sender: shingo
+  text: やってみる😢
+  day: 0
+  time: 夜
+- id: 29
+  thread_id: dm:hikaru-rena
+  sender: rena
+  text: ひかる〜ミクロ経済学入門とってる〜？試験どこかわかんない😭
+  day: 0
+  time: 夜
+- id: 30
+  thread_id: dm:hikaru-rena
+  sender: hikaru
+  text: とってるとってる〜！試験範囲第8章までだって、てかこの前ガイダンスで言ってたよ〜
+  day: 0
+  time: 夜
+- id: 31
+  thread_id: dm:hikaru-rena
+  sender: hikaru
+  text: てかそろそろ講義でなよ笑 出席ヤバいんじゃない？笑
+  day: 0
+  time: 夜
+- id: 32
+  thread_id: dm:hikaru-rena
+  sender: rena
+  text: それな笑
+  day: 0
+  time: 夜
+- id: 33
+  thread_id: dm:naoto-takumi
+  sender: takumi
+  text: 先輩、いきなりすみません！応用無機化学の過去問って持ってたりしますか…？
+  day: 0
+  time: 夜
+- id: 34
+  thread_id: dm:naoto-takumi
   sender: naoto
-  text: 言う関係でもないだろ、もう
+  text: ああ、拓海か。応用無機化学な…一昨年取ったやつ、たぶんクラウドに残ってる。探しとくよ
+  day: 0
+  time: 夜
+- id: 35
+  thread_id: dm:naoto-takumi
+  sender: takumi
+  text: ありがとうございます！
+  day: 0
+  time: 夜
+- id: 36
+  thread_id: dm:naoto-shun
+  sender: shun
+  text: 今夜ひま?駅裏に新しくできたバー、ハイボールが当たりらしい
+  day: 0
+  time: 夜
+- id: 37
+  thread_id: dm:naoto-shun
+  sender: naoto
+  text: はいはい、行くよ。ちょうど一人で飲むのも飽きてたとこ
+  day: 0
+  time: 夜
+- id: 38
+  thread_id: dm:naoto-shun
+  sender: shun
+  text: 帰り、洗車したばっかの車出すわ。乗ってくか?
+  day: 0
+  time: 夜
+- id: 39
+  thread_id: dm:naoto-shun
+  sender: naoto
+  text: 助かる。じゃあ二軒目はレコード屋の上のバー。ジンが揃ってる
+  day: 0
+  time: 夜
+- id: 40
+  thread_id: dm:naoto-ren
+  sender: ren
+  text: あー疲れた。代表やってると全員に気ぃ使うの、地味に効くわ
+  day: 0
+  time: 深夜
+- id: 41
+  thread_id: dm:naoto-ren
+  sender: naoto
+  text: はいはい、お疲れさん。まあ蓮はよくやってるよ
+  day: 0
+  time: 深夜
+- id: 42
+  thread_id: dm:naoto-ren
+  sender: ren
+  text: 直人にだけは素で言えるわ。みんなの前だと「いい代表」やめらんないからさ
+  day: 0
+  time: 深夜
+- id: 43
+  thread_id: dm:naoto-ren
+  sender: naoto
+  text: 俺は何も聞いてないけどな。…ま、たまには気ぃ抜けよ
+  day: 0
+  time: 深夜
+- id: 44
+  thread_id: dm:hiyori-mio
+  sender: hiyori
+  text: 美桜ちゃん、今日新しいクッキー焼いたんです…!よかったら明日もらってください
+  day: 0
+  time: 夕方
+- id: 45
+  thread_id: dm:hiyori-mio
+  sender: mio
+  text: ほしいです〜!♡ ひよりちゃんのお菓子いつも幸せの味…お返しにカフェ奢ります
+  day: 0
+  time: 夕方
+- id: 46
+  thread_id: dm:hiyori-mio
+  sender: hiyori
+  text: ふふ、嬉しい。あの、駅前の新しいカフェ気になってて…
+  day: 0
+  time: 夕方
+- id: 47
+  thread_id: dm:hiyori-mio
+  sender: mio
+  text: 行きましょ行きましょ!写真撮りたいとこいっぱいあるんです🍓
+  day: 0
+  time: 夕方
+- id: 48
+  thread_id: dm:hiyori-sae
+  sender: hiyori
+  text: 紗英先輩、この前のガトーショコラ、お口に合いましたか…?あの、改良版も作ってみたくて
+  day: 0
+  time: 夜
+- id: 49
+  thread_id: dm:hiyori-sae
+  sender: sae
+  text: すごく美味しかった。正直、市販のより好き。ヨガのあとのご褒美にちょうどよかったよ
+  day: 0
+  time: 夜
+- id: 50
+  thread_id: dm:hiyori-sae
+  sender: hiyori
+  text: わ、嬉しいです…!じゃあ次はワインに合うやつ、研究してみますね
+  day: 0
+  time: 夜
+- id: 51
+  thread_id: dm:hiyori-sae
+  sender: sae
+  text: 楽しみにしてる。でも無理はしないようにね
+  day: 0
+  time: 夜
+- id: 52
+  thread_id: dm:mio-sae
+  sender: sae
+  text: 美桜、フォアの調子どう?この前のフォーム、だいぶ良くなってたよ
+  day: 0
+  time: 夜
+- id: 53
+  thread_id: dm:mio-sae
+  sender: mio
+  text: ほんとですか…!?紗英先輩に褒められると自信つきます…!
+  day: 0
+  time: 夜
+- id: 54
+  thread_id: dm:mio-sae
+  sender: sae
+  text: 基礎ができてるから伸びるよ。土曜、時間あったら少し見ようか
+  day: 0
+  time: 夜
+- id: 55
+  thread_id: dm:mio-sae
+  sender: mio
+  text: お願いします…!先輩みたいになりたいです🎾
+  day: 0
+  time: 夜
+posts:
+- id: 1
+  author: hiyori
+  text: サークルに作ったお菓子持ってたら褒められちゃった…!もっとお菓子作って持っていこう💪🍪
+  day: 0
+  time: 昼
+- id: 2
+  author: hiyori
+  text: 次は何作ろ〜?クッキー?マカロン?スコーン?迷う〜🍪✨
+  day: 0
+  time: 昼
+- id: 3
+  author: ren
+  text: 土曜の店もう予約した🍻 飲み放題つけといたから安心してこいよ〜
+  day: 0
+  time: 昼
+- id: 4
+  author: shingo
+  text: 駅前の新店、家系でライス無料!!🍜 神すぎ!!練習後にまた行く!!💪
+  day: 0
+  time: 昼
+- id: 5
+  author: sae
+  text: 朝ヨガ、3週間続いてる。えらい。ご褒美に今夜はちょっといいワイン開けよう
+  day: 0
+  time: 昼
+- id: 6
+  author: mio
+  text: 固めプリン、優勝でした🍮✨ 可愛すぎて写真30枚…どれにしよ〜
+  day: 0
+  time: 昼
+- id: 7
+  author: hikaru
+  text: ヒトカラ3時間で喉終わった〜🎤笑 明日声枯れ確定www
+  day: 0
+  time: 昼
+- id: 8
+  author: hiyori
+  text: 今日はガトーショコラに挑戦です🍫 焦がさず作れますように…!
+  day: 0
+  time: 夕方
+- id: 9
+  author: takumi
+  text: フィルムの現像上がった。逆光のコート、思ったよりいい。サークルのアルバム作ろうかな
+  day: 0
+  time: 夕方
+- id: 10
+  author: rena
+  text: ネイル変えた〜秋のボルドー🍷💅 気づいた人にはいいことあるかも♡
+  day: 0
+  time: 夕方
+- id: 11
+  author: shun
+  text: 洗車した。意味もなく湾岸まで流したくなる天気だった
+  day: 0
+  time: 夕方
+- id: 12
+  author: naoto
+  text: 休みだったのでサウナ。3セット目で全部どうでもよくなる。これが整いか
+  day: 0
+  time: 夕方
+- id: 13
+  author: hiyori
+  text: 上手くできたらみんなに食べてもらお〜☺️🎁
+  day: 0
+  time: 夜
+- id: 14
+  author: hikaru
+  text: カラオケのアレ、9割蓮と美桜でしょ🤔 でも写真ブレブレで全然使えない…去年の誤爆あるし、確証ないと動けないんだよね😤 今度こそ現場おさえる
+  day: 0
+  time: 夜
+- id: 15
+  author: rena
+  text: 駿、最近ほんと付き合い悪いんだけど〜😒 他の男探すべき?ね、探すべきだよね🤍
+  day: 0
+  time: 夜
+- id: 16
+  author: shingo
+  text: 今日もAVでシコシコ😭あー彼女ほしー👼✨
+  day: 0
+  time: 夜
+- id: 17
+  author: mio
+  text: 拓海くんと話せて今日も嬉しかった〜☺️💕 …でもやっぱり、蓮くんのことも気になっちゃう。わたしほんとだめだ…
   day: 0
   time: 深夜
 - id: 18
-  thread_id: dm:naoto-hikaru
-  sender: hikaru
-  text: …そういうとこだよ
-  day: 0
-  time: 深夜
-posts:
-- id: 1
-  author: hikaru
-  text: カラオケのアレ、9割蓮と美桜だと思う。でも写真ブレブレで使いものにならない。去年の誤爆があるから確証なしじゃ動けない。今度こそ現場おさえる
-  day: 0
-  time: 夜
-- id: 2
-  author: rena
-  text: 断られると欲しくなるの、我ながら厄介な性格してる。あと慎吾のわかりやすい貯金、気づいてないふりもそろそろ限界
-  day: 0
-  time: 夜
-- id: 3
-  author: shingo
-  text: 玲奈さんのプレゼント代、あと12,000円!誕生日に渡して、メシ誘う。やるぞ俺!!
-  day: 0
-  time: 夜
-- id: 4
-  author: mio
-  text: 木曜まであと4日。「彼女」の顔を見るたび言いそうになる。別れてって。私だけ見てよ
-  day: 0
-  time: 深夜
-- id: 5
   author: naoto
-  text: 店の個室のアレは見なかった。俺は何も見てない。復帰早々めんどうは背負わない。…光は、元気そうだった
+  text: 今日はなんか人が多い。そしてやたらとモヒートが出る。流行ってんのか？
   day: 0
   time: 深夜
-- id: 6
+- id: 19
   author: sae
-  text: また木曜に「ゼミ」だって。スマホを伏せる癖、いつからだっけ。確かめるのが怖いんじゃない。確かめたあとの自分が怖い
+  text: 最近蓮と二人で過ごせてないな…一緒に飲んだりしたい。
+  day: 0
+  time: 深夜
+- id: 20
+  author: takumi
+  text: 美桜が可愛すぎる。美桜が俺の彼女だなんて、ほんと信じられないくらい幸せだ。
+  day: 0
+  time: 深夜
+- id: 21
+  author: ren
+  text: ジム週4達成💪 ベンチやっと自重いった!次は背中の日、追い込むぞ🔥
+  day: 0
+  time: 午前
+- id: 22
+  author: ren
+  text: 幹事の朝は店からの確認LINEで始まる。今週も満席、いい流れっしょ✌️
+  day: 0
+  time: 夕方
+- id: 23
+  author: shun
+  text: 洗車してワックスまでやると、もう乗るのもったいなくなる。本末転倒だろ
+  day: 0
+  time: 午前
+- id: 24
+  author: shun
+  text: 新しくできたバー、ジンの品揃えだけは本物だった。また一人で行く
+  day: 0
+  time: 深夜
+- id: 25
+  author: shingo
+  text: 朝練前に素振り200本💪 フォアの軌道、やっと自分のものになってきた!!🔥
+  day: 0
+  time: 午前
+- id: 26
+  author: shingo
+  text: 二郎系、全マシは正義!!🍜 明日の筋トレで帳消しにするから理論上ノーカン!!💪
+  day: 0
+  time: 夜
+- id: 27
+  author: takumi
+  text: フィルム1本撮りきった。現像が上がるまでの数日が、たぶん一番好きだ
+  day: 0
+  time: 夕方
+- id: 28
+  author: takumi
+  text: 深夜ラジオ、リスナーのハガキで笑い泣きするやつだった。こういう夜は悪くない
+  day: 0
+  time: 深夜
+- id: 29
+  author: naoto
+  text: ジャズの再発盤、ジャケ買いしたら当たりだった。針を落とす前のあの静けさがいい
+  day: 0
+  time: 夜
+- id: 30
+  author: naoto
+  text: 自作モヒート、ミントの潰し加減でこんなに変わるとは。沼だな、これは
+  day: 0
+  time: 深夜
+- id: 31
+  author: sae
+  text: 朝ヨガからの白湯。一日のはじまりがここで決まる。わかる人いるかな
+  day: 0
+  time: 午前
+- id: 32
+  author: sae
+  text: ボルドーの当たり年、一本だけ奮発した。自分への許可、たまには必要でしょう
+  day: 0
+  time: 夜
+- id: 33
+  author: mio
+  text: 'いちごパフェ🍓盛りが完璧で30分も撮っちゃった…♡ #カフェ巡り #映えすぎ'
+  day: 0
+  time: 昼
+- id: 34
+  author: mio
+  text: 今日のカフェ、光の入り方がもう神…☀️ 自撮りタイム止まらなかったです
+  day: 0
+  time: 夕方
+- id: 35
+  author: rena
+  text: 秋ネイルはくすみカラー一択でしょ〜💅 指先だけで気分爆上げ🍂
+  day: 0
+  time: 昼
+- id: 36
+  author: rena
+  text: アプリのプロフ研究、もう趣味😂 一行目だけで大体わかるのうけるww
+  day: 0
+  time: 夜
+- id: 37
+  author: hikaru
+  text: ヒトカラ平日昼が最強すぎる件🎤 3時間100円とか勝ち確でしょ⤴️
+  day: 0
+  time: 昼
+- id: 38
+  author: hikaru
+  text: カフェで2時間も人間観察しちゃった👀 てか世界、ネタの宝庫すぎ〜
+  day: 0
+  time: 夕方
+- id: 39
+  author: hiyori
+  text: 図書館の隅っこ席ゲットできた日は優勝です📚✨ 借りるのレシピ本ばっかり…笑
+  day: 0
+  time: 昼
+- id: 40
+  author: rena
+  text: 予約の日に限って雨とか〜☔️ ネイル乾く前に濡れる絶望、まじ無理😭
+  day: 0
+  time: 昼
+- id: 41
+  author: rena
+  text: また『君だけは特別』おじさん湧いた🤣 テンプレすぎて様式美ww
+  day: 0
+  time: 夜
+- id: 42
+  author: rena
+  text: 店員さんわたしのときだけ塩じゃない?🥲 気のせいってことにしとこ〜
+  day: 0
+  time: 夕方
+- id: 43
+  author: rena
+  text: 今日のネイル自分史上いちばん可愛い💅✨ 見せたいけど見せない、それがいいの
+  day: 0
+  time: 昼
+- id: 44
+  author: rena
+  text: 『また連絡するね』=社交辞令って気づいたの最近🤣 みんないつ知った?ww
+  day: 0
+  time: 夜
+- id: 45
+  author: rena
+  text: カフェで懐かしい曲流れてエモくなった〜🥹 あの頃のわたし最強だったな
+  day: 0
+  time: 夕方
+- id: 46
+  author: rena
+  text: 並んでたのに横入りされた😇 顔は笑ってる、目は笑ってないけどね〜
+  day: 0
+  time: 昼
+- id: 47
+  author: rena
+  text: 深夜の玲奈、急にエモい🌙 まあ朝には忘れてるからセーフ☺️
+  day: 0
+  time: 深夜
+- id: 48
+  author: hikaru
+  text: おはよ〜☀️ 通知欄朝から渋滞、人気者(自称)はつらいわ〜🤣
+  day: 0
+  time: 午前
+- id: 49
+  author: hikaru
+  text: 満員電車、リュック前に抱えて〜!!😤 てかなんでみんなやらないの!?
+  day: 0
+  time: 午前
+- id: 50
+  author: hikaru
+  text: 並んで買った新作スイーツ🍰✨ 待って、撮る前に一口食べてた、やばww
+  day: 0
+  time: 昼
+- id: 51
+  author: hikaru
+  text: ドラマの犯人タイムラインでネタバレされた😡 は?一生恨む、ブロック案件
+  day: 0
+  time: 夕方
+- id: 52
+  author: hikaru
+  text: ヒトカラで思い出の曲歌って一人で泣いた🎤🥹 秋やば、エモすぎ
+  day: 0
+  time: 夜
+- id: 53
+  author: hikaru
+  text: てかさ、深夜のテンションが一番本音出るよね🌙 裏アカの真理ですわ
+  day: 0
+  time: 深夜
+- id: 54
+  author: hikaru
+  text: アイス落とした…🍦コーン残して中身だけ落ちるやつ😇 立ち直るけど
+  day: 0
+  time: 夕方
+- id: 55
+  author: hikaru
+  text: 帰り道の橋からの夜景きれいすぎた🌃✨ なんかいいことありそ〜♡
+  day: 0
+  time: 夜
+- id: 56
+  author: hikaru
+  text: カラオケ延長で6時間🎤🔥 喉も財布も死んだけど魂は満タン!最高〜!!
   day: 0
   time: 深夜
 history: []
 pending_plans: {}
-next_message_id: 19
-next_post_id: 7
+events:
+- id: 1
+  text: 玲奈が21時以降に駿の部屋へ行く約束。いつも通り、快楽を求め合う時間。
+  created_day: 0
+  due_day: 1
+  chars:
+  - shun
+  - rena
+- id: 2
+  text: 美桜を誘ったら幸運にも応じてくれた。一緒に夕飯を食べて、そのあとは…家に誘ってみるつもりだ。
+  created_day: 0
+  due_day: 1
+  chars:
+  - takumi
+  - mio
+- id: 3
+  text: 水曜の夜、蓮と紗英の二人きりのディナー。蓮が「前に言ってた店」を予約する約束。紗英は最近のすれ違いを埋めたい
+  created_day: 0
+  due_day: 3
+  chars:
+  - ren
+  - sae
+- id: 4
+  text: 練習のあと、サークルのみんなで飲み会。直人が働くバーを紗英が予約済み。
+  created_day: 0
+  due_day: 6
+  chars:
+  - ren
+  - shun
+  - shingo
+  - takumi
+  - sae
+  - mio
+  - rena
+  - hikaru
+  - hiyori
+next_event_id: 5
+next_message_id: 56
+next_post_id: 57

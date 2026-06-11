@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>crosstalk</title>
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">crosstalk <span class="sub"></span></div>
+  <div class="day-info"><span id="day-label">1日目(月)</span></div>
+  <div class="player-info">操作中: <span id="player-name">—</span></div>
+  <button id="menu-toggle" class="ghost" aria-label="メニュー" title="メニュー">☰</button>
+  <div id="topbar-actions">
+    <button id="help-btn" class="ghost" title="遊び方・操作ガイド">❔ 遊び方</button>
+    <button id="settings-btn" class="ghost" title="APIキー・モデル設定">⚙ 設定</button>
+    <button id="export-btn" class="ghost" title="セーブデータをJSONでダウンロード">💾 書き出し</button>
+    <button id="import-btn" class="ghost" title="セーブデータのJSONを読み込んで上書き">📥 読み込み</button>
+    <input id="import-file" type="file" accept=".json,application/json" class="hidden">
+    <button id="new-game-btn" class="ghost">新しいゲーム</button>
+  </div>
+</header>
+
+<nav id="tabs">
+  <button class="tab active" data-tab="about" title="この物語の舞台と状況">あらすじ</button>
+  <button class="tab" data-tab="class">メンバー</button>
+  <button class="tab" data-tab="plan">行動計画</button>
+  <button class="tab" data-tab="log">できごと</button>
+  <button class="tab" data-tab="chat">メッセージ <span id="chat-badge" class="badge hidden">0</span></button>
+  <button class="tab" data-tab="sns">鍵垢 <span id="sns-badge" class="badge hidden">0</span></button>
+  <button class="tab" data-tab="finale">終幕</button>
+  <button class="tab" data-tab="debug" title="LLMに送った生のプロンプトと応答">LLMログ</button>
+</nav>
+
+<main>
+  <!-- あらすじ・状況設定 -->
+  <section id="view-about" class="view active"></section>
+
+  <!-- クラス -->
+  <section id="view-class" class="view">
+    <div id="char-grid"></div>
+    <div id="char-detail" class="hidden"></div>
+  </section>
+
+  <!-- 行動計画 -->
+  <section id="view-plan" class="view">
+    <div class="plan-box">
+      <h2 id="plan-title">今日の行動計画</h2>
+      <p class="hint">自分で書いても、AIに考えてもらってから編集してもOK。</p>
+      <textarea id="plan-text" rows="5" placeholder="今日の行動計画を書いてください。"></textarea>
+      <details id="god-box">
+        <summary>✋ 神の采配(チート)</summary>
+        <p class="hint">ここに書いたことは、今日<b>必ず起こります</b>。キャラの意志を超えた絶対命令です。空欄なら通常進行。</p>
+        <textarea id="god-text" rows="3" placeholder="今日、必ず起こること…"></textarea>
+        <button id="god-suggest-btn" class="ghost" title="人間関係を大きく動かす大事件をAIに提案させる(クリティカル/ファンブル)">🎲 大事件をAIに考えさせる</button>
+      </details>
+      <div class="plan-actions">
+        <button id="suggest-btn" class="ghost">AIに考えてもらう</button>
+        <button id="advance-btn" class="primary">この計画で一日を進める ▶</button>
+        <button id="advance-auto-btn" class="primary" title="計画を入力せず、自分の行動もAIに任せて一日を進める">🎲 おまかせで進める ▶</button>
+      </div>
+      <div id="advance-status" class="hidden">
+        <div class="progress-row">
+          <div class="spinner"></div>
+          <span id="advance-stage">準備中…</span>
+          <span id="advance-eta"></span>
+          <span id="advance-percent"></span>
+        </div>
+        <div class="progress-track"><div id="advance-bar"></div></div>
+      </div>
+    </div>
+    <div id="events-box" class="hidden"></div>
+    <div id="last-result" class="hidden"></div>
+  </section>
+
+  <!-- できごと -->
+  <section id="view-log" class="view">
+    <div id="day-log"></div>
+  </section>
+
+  <!-- 終幕 -->
+  <section id="view-finale" class="view">
+    <div class="plan-box" id="finale-gen-box">
+      <h2>プレイ終了 — シーズン総括</h2>
+      <p class="hint">全員に全記録(裏のDM・秘密・鍵垢・肉体関係の回数)を開示した上で、総括と本人コメントを生成します。</p>
+      <button id="finale-btn" class="primary">総括を生成する</button>
+      <div id="finale-status" class="hidden">
+        <div class="progress-row">
+          <div class="spinner"></div>
+          <span id="finale-stage">準備中…</span>
+          <span id="finale-percent"></span>
+        </div>
+        <div class="progress-track"><div id="finale-bar"></div></div>
+      </div>
+    </div>
+    <div id="finale-content"></div>
+  </section>
+
+  <!-- SNS(全員が鍵垢。プロフィールページで覗き見る) -->
+  <section id="view-sns" class="view">
+    <div id="sns-wrap">
+      <div id="sns-profiles"></div>
+      <div id="sns-profile-head"></div>
+      <div id="sns-composer" class="hidden">
+        <div id="sns-composer-avatar" class="msg-avatar">?</div>
+        <div class="sns-composer-main">
+          <textarea id="sns-input" rows="2" maxlength="280" placeholder="いまどうしてる?(鍵垢。誰にも見られません)"></textarea>
+          <div class="sns-composer-row">
+            <span class="sns-hint">🔒 ここは自分だけの鍵垢 — 愚痴も本音もそのままどうぞ</span>
+            <span id="sns-count" class="sns-hint">0/280</span>
+            <button id="sns-send" class="primary">投稿する</button>
+          </div>
+        </div>
+      </div>
+      <div id="sns-timeline"></div>
+    </div>
+  </section>
+
+  <!-- デバッグ(生のLLMログ) -->
+  <section id="view-debug" class="view">
+    <div id="debug-wrap">
+      <div class="debug-head">
+        <h2>🐛 LLMデバッグログ</h2>
+        <span class="hint">LLMに送った生のプロンプトと応答(直近・新しい順。このブラウザのIndexedDBに保存)。</span>
+        <button id="debug-refresh" class="ghost">🔄 更新</button>
+        <button id="debug-moderate" class="ghost" title="各ログ(プロンプト+応答)を OpenAI モデレーションで判定して危険度を表示(要 OpenAI キー)">🔍 セーフティ判定</button>
+      </div>
+      <div id="debug-cost" class="debug-cost hidden">
+        <span id="debug-cost-text"></span>
+        <button id="debug-cost-reset" class="ghost" title="累計の集計をゼロに戻す(ログ自体は消えません)">リセット</button>
+      </div>
+      <div id="debug-list"></div>
+    </div>
+  </section>
+
+  <!-- メッセージ -->
+  <section id="view-chat" class="view">
+    <div id="messenger">
+      <aside id="thread-sidebar">
+        <button id="new-dm-btn" class="ghost" title="履歴がなくても、任意の相手と新しくDMを始める">✉️ 新しいDM</button>
+        <div id="thread-list"></div>
+      </aside>
+      <div id="chat-pane">
+        <div id="chat-header">スレッドを選択してください</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-row" class="hidden">
+          <button id="chat-suggest-btn" class="ghost" title="このトークでの次の発言をAIに考えさせる">💭</button>
+          <input id="chat-input" type="text" placeholder="メッセージを入力…">
+          <button id="chat-send" class="primary">送信</button>
+        </div>
+        <div id="chat-readonly" class="hidden">👁 このトークは覗き見しています(参加していないため送信不可)</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="newgame-modal" class="hidden">
+  <div class="modal-box">
+    <h2>新しいゲーム</h2>
+    <p class="hint">シナリオを選んでください。現在のプレイ状況とセーブデータは消えます(巻き戻し履歴も含む)。</p>
+    <div id="scenario-list"></div>
+    <div class="modal-actions">
+      <button id="newgame-cancel" class="ghost">キャンセル</button>
+      <button id="newgame-start" class="primary">このシナリオではじめる</button>
+    </div>
+  </div>
+</div>
+
+<div id="newdm-modal" class="hidden">
+  <div class="modal-box">
+    <h2>新しいDM</h2>
+    <p class="hint">DMする相手を選んでください。履歴がなくても、新しく一対一の会話を始められます。</p>
+    <div id="newdm-list"></div>
+    <div class="modal-actions">
+      <button id="newdm-cancel" class="ghost">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<div id="settings-modal" class="hidden">
+  <div class="modal-box">
+    <h2>⚙ 設定</h2>
+    <p class="hint">APIキーは<b>このブラウザの localStorage にのみ</b>保存され、Anthropic API 以外には送信されません。</p>
+    <p class="hint">トークン消費が大きいため、<b>チャージ式(プリペイド残高)のキー</b>を推奨します。残高が尽きると自動で停止し、使いすぎを防げます。</p>
+    <label class="set-label" for="set-apikey">Anthropic APIキー(claude-* 用)</label>
+    <input id="set-apikey" type="password" placeholder="sk-ant-..." autocomplete="off">
+    <label class="set-label" for="set-openai-key">OpenAI APIキー(openai/* 用・任意)</label>
+    <input id="set-openai-key" type="password" placeholder="sk-..." autocomplete="off">
+    <label class="set-label" for="set-xai-key">xAI APIキー(xai/* 用・任意)</label>
+    <input id="set-xai-key" type="password" placeholder="xai-..." autocomplete="off">
+    <label class="set-label" for="set-model">モデル</label>
+    <input id="set-model" type="text" placeholder="claude-sonnet-4-6">
+    <div id="model-chips" class="model-chips"></div>
+    <p class="hint">ストーリーテリング力の観点から、<b>Opus 4.6</b> を推奨します。</p>
+    <p class="hint"><code>xai/</code>・<code>openai/</code> で始まるモデル名で Grok / ChatGPT も使えます(例: <code>xai/grok-4.3</code>, <code>openai/gpt-5.3-chat-latest</code>)。対応する上のキーが必要です。</p>
+    <div class="danger-zone">
+      <button id="wipe-storage" class="ghost danger" title="この端末の保存データ(localStorage: セーブ・設定・APIキー・既読状態 / IndexedDB: スナップショット・LLMログ)をすべて消去して初期化します">🗑 全データを削除(初期化)</button>
+    </div>
+    <div class="modal-actions">
+      <button id="settings-cancel" class="ghost">閉じる</button>
+      <button id="settings-save" class="primary">保存</button>
+    </div>
+  </div>
+</div>
+
+<div id="help-modal" class="hidden">
+  <div class="modal-box help-box">
+    <h2>crosstalk へようこそ</h2>
+    <p class="hint">LLM が動かす恋愛群像劇シミュレーションです。あなたは登場人物の一人に「乗り移り」、毎日の行動を自由に記述して物語を転がします。全員の秘密や鍵垢(非公開SNS)まで見えるので、誰の何を暴くかはあなた次第。</p>
+
+    <h3 class="help-h">遊び方(進め方)</h3>
+    <ol class="help-list">
+      <li><b>⚙ 設定</b>で Anthropic APIキーを入力します(下記参照)。</li>
+      <li><b>行動計画</b>タブで今日の行動を決めます(自分で書く / AIに考えてもらう / 🎲おまかせ)。</li>
+      <li><b>「この計画で一日を進める ▶」</b>を押すと、その一日がシミュレートされます(1〜2分)。</li>
+      <li><b>できごと・メッセージ・鍵垢</b>で結果を確認。気になる相手に自分から DM を送ってもOK。</li>
+      <li>これを繰り返して物語を進め、区切りがついたら<b>終幕</b>で総括を作れます。</li>
+    </ol>
+
+    <h3 class="help-h">タブの内容</h3>
+    <ul class="help-list">
+      <li><b>あらすじ</b> … 物語の舞台・状況・登場人物</li>
+      <li><b>メンバー</b> … 各キャラの性格・秘密・目標・関係(クリックで詳細・前後移動・記憶の改変)</li>
+      <li><b>行動計画</b> … 今日の行動を入力して一日を進める。「✋神の采配」で強制イベントも</li>
+      <li><b>できごと</b> … その日に起きた出来事を小説で表示</li>
+      <li><b>メッセージ</b> … キャラ同士のDM・グループチャット。あなたも送信できる</li>
+      <li><b>鍵垢</b> … 各キャラの非公開SNS(誰にも見せない本音)</li>
+      <li><b>終幕</b> … 全記録を開示するシーズン総括</li>
+      <li><b>LLMログ</b> … 送信したプロンプト・応答・コスト</li>
+    </ul>
+
+    <h3 class="help-h">Anthropic APIキーの入手</h3>
+    <p class="hint"><a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a> でアカウントを作成し、「API Keys」からキーを発行します(<code>sk-ant-…</code>)。キーは<b>このブラウザにのみ</b>保存され、Anthropic 以外には送信されません。トークン消費が大きいので、<b>チャージ式(プリペイド残高)のキー</b>を推奨します(残高が尽きれば自動で止まります)。</p>
+    <p class="hint">Anthropic 以外に <b>OpenAI(ChatGPT)・xAI(Grok)</b> も使えます。⚙設定で各キーを入れ、モデル名を <code>openai/…</code> ・ <code>xai/…</code> にするだけ。</p>
+
+    <div class="modal-actions">
+      <button id="help-close" class="ghost">閉じる</button>
+      <button id="help-settings" class="primary">⚙ 設定を開く</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="hidden"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
