@@ -125,6 +125,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .ghost:hover { background: #f0ede4; }
 .ghost:disabled { opacity: .5; cursor: default; }
+a.ghost { text-decoration: none; display: inline-flex; align-items: center; }
 
 /* ---------- class view ---------- */
 #char-grid {
