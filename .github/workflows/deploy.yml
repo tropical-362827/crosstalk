@@ -28,7 +28,9 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        # npm ci は lock の完全一致を要求し、darwin生成 lock だと linux 用の
+        # optional 依存(@emnapi 等)欠落で落ちるため、install で解決し直す
+        run: npm install --no-audit --no-fund
 
       - name: Smoke test(純ロジック検証をゲートに)
         run: npm run smoke
