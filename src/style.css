@@ -236,16 +236,9 @@ a.ghost { text-decoration: none; display: inline-flex; align-items: center; gap:
   border-left: 1px dashed var(--line);
   padding-left: 22px;
 }
-@media (max-width: 760px) {
-  .detail-cols { flex-direction: column; }
-  .detail-side { border-left: none; padding-left: 0; }
-  #topbar { gap: 10px; padding: 8px 12px; }
-  #tabs { padding: 6px 12px 0; }
-  .tab { padding: 9px 12px; font-size: 13px; }
-  .view { padding: 14px; }
-  .plan-actions { flex-wrap: wrap; }
-  #char-detail .head { flex-wrap: wrap; }
-  /* 設定/書き出し/読み込み/新しいゲーム をハンバーガーに格納 */
+/* アクション(GitHub/遊び方/設定/書き出し/読み込み/新しいゲーム)が多く、
+   中くらいの幅でヘッダが詰まるので、早めにハンバーガー(☰)へ畳む */
+@media (max-width: 1100px) {
   #menu-toggle { display: inline-flex; align-items: center; }
   #topbar-actions {
     display: none;
@@ -257,6 +250,17 @@ a.ghost { text-decoration: none; display: inline-flex; align-items: center; gap:
   }
   #topbar-actions.open { display: flex; }
   #topbar-actions .ghost { width: 100%; text-align: left; }
+  #topbar-actions a.ghost { justify-content: flex-start; }
+}
+@media (max-width: 760px) {
+  .detail-cols { flex-direction: column; }
+  .detail-side { border-left: none; padding-left: 0; }
+  #topbar { gap: 10px; padding: 8px 12px; }
+  #tabs { padding: 6px 12px 0; }
+  .tab { padding: 9px 12px; font-size: 13px; }
+  .view { padding: 14px; }
+  .plan-actions { flex-wrap: wrap; }
+  #char-detail .head { flex-wrap: wrap; }
 }
 @media (max-width: 460px) {
   .brand .sub { display: none; } /* 長いシナリオ名は省略 */
