@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" role="img" aria-label="crosstalk">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f5ef"/>
+      <stop offset="1" stop-color="#eee9df"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a6fb5"/>
+      <stop offset="1" stop-color="#e0529c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="240" fill="url(#bg)"/>
+  <text x="600" y="158" text-anchor="middle" fill="#2b2b33"
+        font-family="'Helvetica Neue', Arial, 'Segoe UI', sans-serif"
+        font-weight="800" font-size="148" letter-spacing="4">crosstalk</text>
+  <rect x="478" y="188" width="244" height="7" rx="3.5" fill="url(#accent)"/>
+</svg>
