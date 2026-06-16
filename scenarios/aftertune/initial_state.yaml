@@ -1,0 +1,293 @@
+# 初期キャスト・関係性・スレッド・初期メッセージ(きらら系・平和な日常もの)
+# 恋愛/敵対の status・crush・肉体関係は使わない。関係は友情のみ、note に質感を書く。
+scenario: aftertune
+day: 1
+player_id: hina
+characters:
+- id: hina
+  name: 陽菜
+  kana: ひな
+  gender: 女
+  club: 1年・Vo&ギター(初心者)
+  personality: 地味で引っ込み思案だが、芯は素直で頑張り屋。幼馴染の葵に誘われ、なんとなく入部した。人見知りで自分に自信がないが、好きになったことには真面目に向き合う。
+  hobbies:
+  - 弾き語りの練習
+  - 古本屋めぐり
+  - あんこ系のお菓子
+  speech_style: 控えめで丁寧め。「えっと…」「が、頑張ります」。声は小さい。
+  secret: 家でこっそり作詞ノートを書きためている。人前で歌うのが本当は怖くて、本番前はトイレで深呼吸している。
+  goal: 文化祭のライブで、自分の声でちゃんと最後まで歌いきる。
+  color: '#5b9a8f'
+- id: aoi
+  name: 葵
+  kana: あおい
+  gender: 女
+  club: 1年・ドラム
+  personality: 声が大きくて元気いっぱいのムードメーカー。陽菜の幼馴染で、面倒見がよく、いつも誰かの背中を押している。考えるより先に体が動くタイプ。
+  hobbies:
+  - カラオケ
+  - バスケ観戦
+  - からあげ
+  speech_style: 元気で勢いがある。「うぇーい」「いっちゃおう!」。
+  secret: ドラムは勢いと耳コピだけで、実は楽譜がほとんど読めない。陽菜を軽音に誘ったのは本当は一人だと心細かったからで、それは言えていない。
+  goal: みんなで文化祭ライブを思いっきり楽しむ。陽菜の背中を押し続ける。
+  color: '#e0794a'
+- id: yuno
+  name: 柚乃
+  kana: ゆの
+  gender: 女
+  club: 2年・リードギター
+  personality: マイペースで寡黙、いつも眠そうにふわふわしている天才肌。ギターは部内随一だが本人は無頓着。お菓子と猫とひなたが好き。たまに核心を突く一言を無自覚に言う。
+  hobbies:
+  - お菓子作り
+  - 猫
+  - 昼寝
+  speech_style: ぽやぽやして言葉少な。「…ねむい」「おいしい」。
+  secret: 耳がとても良く、一度聴いた曲はだいたい弾ける。部室でこっそり全員ぶんの焼き菓子を用意しているのに、照れて「余っただけ」と言い張る。
+  goal: みんなが気持ちよく弾けるように、こっそり全部のパートを覚えておく。
+  color: '#8e6fc0'
+- id: chikage
+  name: 千景
+  kana: ちかげ
+  gender: 女
+  club: 3年・部長/ベース
+  personality: しっかり者で世話焼きの部長。段取り上手でみんなを引っ張るが、完璧であろうと何でも抱え込みがち。落ち着いて見えて、本番前はいつも緊張している。
+  hobbies:
+  - 手帳でスケジュール管理
+  - コーヒー
+  - ベースの地味練
+  speech_style: 落ち着いた頼れる口調。「よし、いこっか」「任せて」。
+  secret: 部長として完璧であろうと何でも抱え込んでしまい、本番前は決まってお腹が痛くなる。引退が近く、この部室が無くなるのが少し寂しい。
+  goal: 最後の文化祭、後輩たちと最高のライブをやり切って、笑って引退する。
+  color: '#3f5a8f'
+- id: koharu
+  name: 小春
+  kana: こはる
+  gender: 女
+  club: 2年・キーボード
+  personality: おっとりした癒し系で、部室の和やかさそのもの。気配り上手で、いつも紅茶を淹れてみんなを和ませる。穏やかだが、実はちょっと抜けているところもある。
+  hobbies:
+  - 紅茶
+  - 編み物
+  - 写真
+  speech_style: のんびり優しい敬語まじり。「ふふ、どうぞ」「いいですねぇ」。
+  secret: ひどい方向音痴で、校内でもよく迷う。部室の居心地を保つために密かに気を配っているが、自分では当たり前のことだと思っている。
+  goal: みんながいつでも帰ってこられる、居心地のいい部室をつくる。
+  color: '#d27aa0'
+relationships:
+- a: aoi
+  b: hina
+  note: 幼馴染。葵が陽菜を軽音に引っ張り込んだ。何でも言い合える親友どうし。
+- a: hina
+  b: yuno
+  note: 柚乃が陽菜にギターのコードをこっそり教えている。陽菜は柚乃を密かに尊敬している。
+- a: chikage
+  b: hina
+  note: 部長と新入り。千景は緊張しがちな陽菜をいつも気にかけて励ます。
+- a: hina
+  b: koharu
+  note: 小春は緊張しいの陽菜に、いつもそっと紅茶を差し出す。
+- a: aoi
+  b: yuno
+  note: 正反対(元気⇔ぽやぽや)なのに妙に気が合う、リズム隊の相方。
+- a: aoi
+  b: chikage
+  note: 葵の勢いを、千景が上手に舵取りする。
+- a: aoi
+  b: koharu
+  note: 葵が小春に編み物を教わっているが、毎回ほどけてしまう。
+- a: chikage
+  b: yuno
+  note: 千景は柚乃の遅刻やサボりに手を焼きつつ、その才能を誰より信頼している。
+- a: koharu
+  b: yuno
+  note: お菓子(柚乃)と紅茶(小春)の名コンビ。部室のおやつ担当。
+- a: chikage
+  b: koharu
+  note: 落ち着いた二人。小春は部長を陰でそっと支えている。
+threads:
+- id: club
+  name: 軽音部🎸
+  kind: group
+  members:
+  - hina
+  - aoi
+  - yuno
+  - chikage
+  - koharu
+- id: dm:aoi-hina
+  name: 葵 / 陽菜
+  kind: dm
+  members:
+  - aoi
+  - hina
+- id: dm:koharu-yuno
+  name: 小春 / 柚乃
+  kind: dm
+  members:
+  - koharu
+  - yuno
+- id: dm:chikage-hina
+  name: 千景 / 陽菜
+  kind: dm
+  members:
+  - chikage
+  - hina
+messages:
+- id: 1
+  thread_id: club
+  sender: chikage
+  text: 来月の文化祭、軽音部でライブをやります!今日から放課後、曲決めと練習をはじめよう
+  day: 0
+  time: 夜
+- id: 2
+  thread_id: club
+  sender: aoi
+  text: うぇーい!!ついにバンドデビューだ🥁 陽菜ボーカルがんばれ〜!
+  day: 0
+  time: 夜
+- id: 3
+  thread_id: club
+  sender: hina
+  text: え、えっと…精一杯がんばります…!
+  day: 0
+  time: 夜
+- id: 4
+  thread_id: club
+  sender: koharu
+  text: わたし、お茶とお菓子を用意しておきますね。ふふ、緊張は紅茶でほぐしましょう☕
+  day: 0
+  time: 夜
+- id: 5
+  thread_id: club
+  sender: yuno
+  text: …クッキー焼いた。余ったから、持っていく
+  day: 0
+  time: 夜
+- id: 6
+  thread_id: club
+  sender: chikage
+  text: 柚乃ありがとう。みんな、まずは課題曲を1つ決めたい。今週中に候補を出してね
+  day: 0
+  time: 夜
+- id: 7
+  thread_id: club
+  sender: aoi
+  text: はーい!あたしノリのいいやつがいい🔥
+  day: 0
+  time: 夜
+- id: 8
+  thread_id: dm:aoi-hina
+  sender: aoi
+  text: ねー陽菜、ほんとはボーカル嫌じゃない?無理にとは言わんけど
+  day: 0
+  time: 夜
+- id: 9
+  thread_id: dm:aoi-hina
+  sender: hina
+  text: ううん…緊張はするけど、葵が誘ってくれたの嬉しかったから。やってみたい
+  day: 0
+  time: 夜
+- id: 10
+  thread_id: dm:aoi-hina
+  sender: aoi
+  text: …っ、そっか!よし、特訓付き合うからな!帰りカラオケ行こ🎤
+  day: 0
+  time: 夜
+- id: 11
+  thread_id: dm:koharu-yuno
+  sender: koharu
+  text: 柚乃ちゃん、明日のお菓子は何にします?わたし新しい茶葉を仕入れたんです
+  day: 0
+  time: 夕方
+- id: 12
+  thread_id: dm:koharu-yuno
+  sender: yuno
+  text: …マドレーヌ。紅茶に合うやつ
+  day: 0
+  time: 夕方
+- id: 13
+  thread_id: dm:koharu-yuno
+  sender: koharu
+  text: わぁ、楽しみ。いつもありがとう。ふふ、わたしたちの休憩時間が部活の本体かもですね
+  day: 0
+  time: 夕方
+- id: 14
+  thread_id: dm:chikage-hina
+  sender: chikage
+  text: 陽菜さん、入部ありがとう。緊張しいなのは知ってるから、無理しないでね。困ったらいつでも頼って
+  day: 0
+  time: 夜
+- id: 15
+  thread_id: dm:chikage-hina
+  sender: hina
+  text: せ、千景先輩…はい、ありがとうございます。先輩がいると、安心します
+  day: 0
+  time: 夜
+posts:
+- id: 1
+  author: aoi
+  text: ついに軽音部ライブ決定〜!!陽菜のボーカル絶対かわいいから見てほしい🥁🔥
+  day: 0
+  time: 夜
+- id: 2
+  author: hina
+  text: 人前で歌うとか、わたしにできるのかな…。でも、ちょっとだけわくわくもしてる
+  day: 0
+  time: 夜
+- id: 3
+  author: yuno
+  text: マドレーヌ成功。みんなおいしいって言うかな…べつに、余っただけだけど🍪
+  day: 0
+  time: 夕方
+- id: 4
+  author: koharu
+  text: 新しいダージリン、香りがすごくいい☕ 明日みんなに淹れよう。ふふ
+  day: 0
+  time: 夕方
+- id: 5
+  author: chikage
+  text: 最後の文化祭。後輩たちと笑って終われますように。…あと、本番前のお腹だけが心配
+  day: 0
+  time: 深夜
+- id: 6
+  author: aoi
+  text: 楽譜やっぱ読めん!でも耳でなんとかなる、たぶん!からあげ食べて練習する💪
+  day: 0
+  time: 夜
+- id: 7
+  author: hina
+  text: 千景先輩に「頼っていい」って言われて、ちょっと泣きそうになった。いい部活に入ったなあ
+  day: 0
+  time: 夜
+- id: 8
+  author: yuno
+  text: …ねむい。でも部室のソファ、ひなたで最高。猫になりたい🐱
+  day: 0
+  time: 夕方
+- id: 9
+  author: koharu
+  text: 葵ちゃんの編み物、今日もほどけてた。でも諦めないところがすき。応援してます
+  day: 0
+  time: 夜
+- id: 10
+  author: chikage
+  text: 譜面まとめ終わり。コーヒー淹れて、もうひと頑張り。みんなのキラキラした顔を見ると抱え込みも忘れる
+  day: 0
+  time: 深夜
+history: []
+pending_plans: {}
+events:
+- id: 1
+  text: 文化祭ライブ本番。軽音部「Cookies」が初めてステージに立つ
+  created_day: 0
+  due_day: 21
+  chars:
+  - hina
+  - aoi
+  - yuno
+  - chikage
+  - koharu
+next_event_id: 2
+next_message_id: 16
+next_post_id: 11
