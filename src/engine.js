@@ -547,10 +547,12 @@ export async function simulateDay(S, plans, onProgress = null, god = "") {
   }
   // generateNpcPlans と同一の状態要約ブロック → キャッシュが効く(5分TTL内)
   const volatilePrefix = `\n\n${stateVolatile(S)}${godSection(god)}`;
+  // シナリオが simulate_rules を持てば既定の(恋愛ドロドロ前提の)ルールを差し替える
+  const rules = scenario.load(S.scenario).simulate_rules || SIMULATE_RULES;
   const rest =
     `\n\n## 今日(${S.day}日目・${weekdayOf(S.day)}曜日)の各自の行動計画\n` +
     planLines.join("\n") +
-    `\n\nこの一日をシミュレートしてください。\n${SIMULATE_RULES}\n` +
+    `\n\nこの一日をシミュレートしてください。\n${rules}\n` +
     (god.trim()
       ? "- 「## 神の采配」の内容は今日必ず起こす。シーン・messages・relationship_changesに確実に反映すること。\n"
       : "") +

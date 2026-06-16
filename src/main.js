@@ -1311,43 +1311,49 @@ function advanceProgress(stage, pct) {
   }
 }
 
-// 各フェーズの想定所要(秒)を過去ログの中央値で校正する。初回はログがないので実測の典型値
+// 各フェーズの想定所要(秒)を「用途 × 現在のモデル」の平均で校正する。
+// モデルで速度が大きく違う(opus/grok/gpt-5等)ため、現在のモデルに絞って推定する。
+// 該当ログが無ければ null(=不明)を返す。フォールバックの当て推量はしない。
 async function expectedDurations() {
-  const fallback = { plan: 25, sim: 130 };
+  const model = loadSettings().model || DEFAULT_MODEL;
   try {
-    const logs = await readLlmLog(60);
-    const median = (purpose) => {
-      const ds = logs
-        .filter((l) => l.purpose === purpose && l.duration_sec > 0)
-        .map((l) => l.duration_sec)
-        .sort((a, b) => a - b);
-      return ds.length ? ds[Math.floor(ds.length / 2)] : null;
+    const logs = await readLlmLog(100);
+    const meanOf = (purpose) => {
+      const pool = logs.filter(
+        (l) => l.purpose === purpose && l.model === model && l.duration_sec > 0
+      );
+      return pool.length
+        ? pool.reduce((s, l) => s + l.duration_sec, 0) / pool.length
+        : null;
     };
     return {
-      plan: median("NPC行動計画の生成") ?? fallback.plan,
-      sim: median("一日のシミュレーション") ?? fallback.sim,
+      plan: meanOf("NPC行動計画の生成"),
+      sim: meanOf("一日のシミュレーション"),
     };
   } catch {
-    return fallback;
+    return { plan: null, sim: null };
   }
 }
 
 // startPct→endPct を、想定時間に対する経過時間で滑らかに進める(thinking中も動く)。
 // run には字数ベースの onProgress を渡し、出力が速ければそちらで前倒しする(advanceProgressがmax更新)
 async function runPhase(startPct, endPct, expectedSec, run) {
-  const t0 = Date.now();
-  const tick = () => {
-    const elapsed = (Date.now() - t0) / 1000;
-    const frac = Math.min(0.97, elapsed / Math.max(1, expectedSec)); // 超過時は手前で待機
-    advanceProgress(null, startPct + (endPct - startPct) * frac);
-  };
-  const timer = setInterval(tick, 400);
+  // 想定時間が分かっているときだけ時間ベースで進める。不明(null)なら字数ベースのみ。
+  let timer = null;
+  if (expectedSec) {
+    const t0 = Date.now();
+    timer = setInterval(() => {
+      const elapsed = (Date.now() - t0) / 1000;
+      const frac = Math.min(0.97, elapsed / Math.max(1, expectedSec)); // 超過時は手前で待機
+      advanceProgress(null, startPct + (endPct - startPct) * frac);
+    }, 400);
+  }
   try {
     return await run((f) =>
       advanceProgress(null, startPct + (endPct - startPct) * Math.min(1, f))
     );
   } finally {
-    clearInterval(timer);
+    if (timer) clearInterval(timer);
     advanceProgress(null, endPct);
   }
 }
@@ -1360,21 +1366,26 @@ async function runAdvance(auto) {
   let etaTimer = null; // catch からも参照するため try の外で宣言
   try {
     await saveSnapshotLocal(S); // この日の朝の状態を巻き戻し用に保存
-    // 実測の時間比でバーを配分する(計画≒25s, シミュレーション≒130s → 16% : 84%)
+    // 「用途×現在モデル」の実測平均でバーを配分する。両方とも既知のときだけ時間ベースで動く
     const dur = await expectedDurations();
-    const planEnd = 2 + 94 * (dur.plan / (dur.plan + dur.sim));
+    const known = dur.plan != null && dur.sim != null;
+    const planEnd = known ? 2 + 94 * (dur.plan / (dur.plan + dur.sim)) : 17; // 不明時は既定の配分
     const god = $("#god-text").value;
     // おまかせならプレイヤーも除外せず、AIに計画を立てさせる
     const exclude = auto ? [] : [S.player_id];
 
-    // 想定残り秒数の表示(全フェーズ合計時間 − 経過)。超過したら「まもなく…」
-    const totalSec = dur.plan + dur.sim;
-    const genStart = Date.now();
-    etaTimer = setInterval(() => {
-      const remain = totalSec - (Date.now() - genStart) / 1000;
-      $("#advance-eta").textContent =
-        remain > 1 ? `・ 残り約${Math.ceil(remain)}秒` : "・ まもなく完了…";
-    }, 500);
+    // 想定残り秒数の表示。実測データが無い(このモデル初回など)ときは「不明」
+    if (known) {
+      const totalSec = dur.plan + dur.sim;
+      const genStart = Date.now();
+      etaTimer = setInterval(() => {
+        const remain = totalSec - (Date.now() - genStart) / 1000;
+        $("#advance-eta").textContent =
+          remain > 1 ? `・ 残り約${Math.ceil(remain)}秒` : "・ まもなく完了…";
+      }, 500);
+    } else {
+      $("#advance-eta").textContent = "・ 残り時間: 不明(このモデルの実測待ち)";
+    }
 
     advanceProgress(
       auto ? "全員(あなた含む)の行動計画を生成中…" : "NPC全員の行動計画を生成中…",
