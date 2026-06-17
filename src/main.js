@@ -160,6 +160,22 @@ function visibleThreads() {
 // 描画・取り込み時のサニタイズ(esc/safeColor/validateSave)は純関数として
 // src/sanitize.js に分離し、ここからも smoke テストからも import する。
 
+// 本文中の「[添付: 説明]」を写真プレースホルダのカードに、それ以外はエスケープして返す。
+// 実画像は持たず、どんな画像かを文字で説明する擬似添付。
+function withAttachments(text) {
+  const re = /\[添付[：:]\s*([^\]]+)\]/g;
+  let html = "",
+    last = 0,
+    m;
+  while ((m = re.exec(text))) {
+    html += esc(text.slice(last, m.index));
+    html += `<span class="attach">📷 <span class="attach-cap">${esc(m[1].trim())}</span></span>`;
+    last = m.index + m[0].length;
+  }
+  html += esc(text.slice(last));
+  return html;
+}
+
 // ---------------------------------------------------------------- あらすじ
 function renderAbout() {
   const box = $("#view-about");
@@ -324,7 +340,7 @@ function renderSns() {
             <span class="post-handle">@${esc(c.id)}</span>
             <span class="post-time">${esc(post.time)}</span>
           </div>
-          <div class="post-text">${esc(post.text)}</div>
+          <div class="post-text">${withAttachments(post.text)}</div>
         </div>
       </div>`;
     if (snsDividerAt !== null && post.id === snsDividerAt) {
@@ -931,7 +947,7 @@ function renderChat() {
         <div class="msg-avatar" style="background:${c ? safeColor(c.color) : "#999"}">${c ? esc(initialOf(c)) : "?"}</div>
         <div class="msg-body">
           ${mine ? "" : `<div class="msg-sender">${c ? esc(c.name) : esc(m.sender)}</div>`}
-          <div class="msg-bubble">${esc(m.text)}</div>
+          <div class="msg-bubble">${withAttachments(m.text)}</div>
           <div class="msg-meta">${esc(m.time)}</div>
         </div>
       </div>`;
