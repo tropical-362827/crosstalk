@@ -1643,6 +1643,9 @@ $("#import-file").addEventListener("change", async (e) => {
     dividerAt = null;
     currentProfile = null;
     snsDividerAt = null;
+    seenByThread = {};
+    seenPostsByAuthor = {};
+    markAllSeen(); // 読み込んだセーブのメッセージ・鍵垢はすべて既読にしておく
     applyMeta();
     await fetchRewindDays();
     renderAll();
